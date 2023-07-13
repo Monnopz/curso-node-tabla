@@ -59,4 +59,4 @@ Eliminar dependencias: npm uninstall nombreDependencia
 Hay que crear el git ignore para ignorar archivos e iniciar el repo
 
 
-
+Markdown Open Preview, Visual Studio
