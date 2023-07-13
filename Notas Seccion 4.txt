@@ -1,0 +1,62 @@
+Con node podemos tener acceso al filesystem de nuestro ordenador
+require es de CommonScript, import es de EcmaScript
+
+
+Node fs es para leer entradas en la consola de un programa de Node
+Para ejecutar el programa es: node nombreArchivo
+
+El app.js debe ser lo mas limpio posible
+
+
+//module es un objeto global que existe en node
+//Esto se hace porque no se puede exportar de la manera mas nueva con ECMAScript
+//Ya que así es node
+module.exports = { 
+    crearArchivo: crearArchivo
+ }
+
+//crearArchivo es la propiedad del objeto que se está exportando en 'multiplicar.js'
+//Entonces se destructura y se ocupa en nuestro app.js
+const { crearArchivo } = require('./helpers/multiplicar');
+
+Se pueden enviar parametros en la consola (como banderas) para que nuestro programa tome ese valor y haga algo con el
+
+//process.argv devuelve un arreglo con los argumentos que capta la consola para nuestro programa codificado
+console.log(process.argv)
+
+
+La utilidad de los paquetes npm (dependencias) consiste en que ayudan a exteder la funcionalidad de mi programa sin tener que reinventar la rueda haciendo mucho codigo
+
+El package.json es el punto inicial de cualquier proyecto de node. Ayuda a saber cuales son los comandos a ejecutar, las dependencias instaladas, etc
+El package.lock.json indica como se construyeron las dependencias indicadas en el package.json
+
+Es necesario no mover nada del package.lock.json y mover al minimo el package.json
+
+npm init: Sirve para crear el package.json de manera manual
+npm init -Y : Sirve para crear el package.json con sus valores por defecto
+
+Con el versionamiento (por ejemplo 0.0.1), podemos avanzar de version, pero no retroceder
+
+Para ejecutar scripts o comandos propios indicados en el package.json es
+npm run ComandoAEjecutar
+
+Las dependencias de desarrollo solo nos sirven para cuando estemos codificando en entorno de desarrollo nuestro proyecto de Node
+
+Instalar dependencia: npm install nombreDependencia
+Instalar dependencia especifica: npm install nombreDependencia@versionSemantica
+Instalar dependencia solo desarrollo: npm install nombreDependencia --save-dev
+
+Si descargo un proyecto de GitHub, los node_modules no estarán
+por lo tanto los tengo que reconstruir simplemente con npm install
+
+Revisar todas las dependencias y actualizarlas: npm update
+
+Eliminar dependencias: npm uninstall nombreDependencia
+
+--opcion
+-bandera
+
+Hay que crear el git ignore para ignorar archivos e iniciar el repo
+
+
+
